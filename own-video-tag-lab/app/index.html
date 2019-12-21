@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video</title>
+  <style>
+    video {
+      max-width: 95vw;
+    }
+
+    video:not(:first-of-type) {
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="https://developers.google.com/web/fundamentals/media/video">References in google</a>
+  <br><br>
+  <!-- first method -->
+  <!-- <video controls src="chrome.webm" type="video/webm">
+    <p>Your browser does not support the video element.</p>
+  </video> -->
+
+  <!-- second method -->
+  <video poster="poster.png" controls>
+    <!-- other source here -->
+    <!-- <source src="chrome.webm" type="video/webm" /> -->
+    <source src="chrome.webm" type="video/webm" />     
+
+    <!-- add caption -->
+    <track src="chrome-subtitles-en.vtt" label="English captions"
+         kind="captions" srclang="en" default>
+    <p>Your browser does not support the video element.</p>
+  </video>
+  <br />
+  &lt;source src="chrome.webm#t=5,10" type="video/webm" /&gt; 
+  <br />
+  to specific start and auto pause time
+
+  <p>
+    When the browser parses the &lt;source&gt; tags, it uses the optional type attribute to help decide which file to
+    download and play. If the browser supports WebM, it plays chrome.webm; if not, it checks whether it can play MPEG-4
+    videos.
+  </p>
+
+</body>
+
+</html>
